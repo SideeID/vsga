@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Koneksi HTML ke Server XAMPP</title>
+</head>
+<body>
+    <button onclick="runConnection()">Jalankan Koneksi</button>
+
+    <script>
+        function runConnection() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'koneksi.php', true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    alert('Koneksi berhasil!');
+                } else {
+                    alert('Koneksi gagal!');
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
